@@ -73,8 +73,9 @@ namespace MoonSweepersMod
         {
             try
             {
-                Il2CppInterop.Runtime.Injection.ClassInjector.RegisterTypeInIl2Cpp(
-                    typeof(UI.ModPanel), Il2CppInterop.Runtime.Injection.RegisterTypeOptions.Options);
+                // Use the baseline Type-only overload: it exists in every
+                // Il2CppInterop 1.x build, unlike the preview-only Options overload.
+                Il2CppInterop.Runtime.Injection.ClassInjector.RegisterTypeInIl2Cpp(typeof(UI.ModPanel));
                 var go = new GameObject("MoonQoL_Panel");
                 go.AddComponent<UI.ModPanel>();
                 Core.Log.Info("[MoonQoL] In-game panel registered.");

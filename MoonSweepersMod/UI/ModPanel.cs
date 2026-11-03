@@ -14,9 +14,14 @@ namespace MoonSweepersMod.UI
         private bool _placementMode;
         private int _tab;
 
-        public override void Awake() { Visible = Core.ModConfig.EnableUi.Value; }
+        // NOTE: intentionally `new`, not `override`. Il2CppInterop's generated
+        // UnityEngine.MonoBehaviour does NOT declare Unity message methods (Awake/
+        // Update/OnGUI) as virtual; overriding them would cause a TypeLoadException
+        // when the injected class is loaded. Unity's message system finds these by
+        // name, so a plain new-slot method works with either base-class shape.
+        public new void Awake() { Visible = Core.ModConfig.EnableUi.Value; }
 
-        public override void Update()
+        public new void Update()
         {
             // feature ticks run every frame regardless of panel visibility
             Features.VehicleControls.Update(Time.deltaTime);
@@ -26,7 +31,7 @@ namespace MoonSweepersMod.UI
             if (UnityEngine.Input.GetKeyDown(Core.ModConfig.UiToggleKey.Value)) Visible = !Visible;
         }
 
-        public override void OnGUI()
+        public new void OnGUI()
         {
             if (!Visible) return;
             int w = Screen.width, h = Screen.height;
