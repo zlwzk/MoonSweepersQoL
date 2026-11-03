@@ -12,7 +12,7 @@
 直接解压 / 覆盖到游戏根目录，也就是 `MoonSweepers.exe` 所在的文件夹：
 
 ```
-D:\Program Files (x86)\Steam\steamapps\common\Moon Sweepers
+<Steam 安装目录>\steamapps\common\Moon Sweepers
 ```
 
 ### 方法 B：用安装器（自动定位）

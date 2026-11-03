@@ -38,7 +38,7 @@ if defined GAME (
 ) else (
   echo Could not auto-detect Steam. Please enter the game root folder
   echo (the folder that contains MoonSweepers.exe), e.g.:
-  echo   D:\Program Files (x86)\Steam\steamapps\common\Moon Sweepers
+  echo   C:\Program Files (x86)\Steam\steamapps\common\Moon Sweepers
   echo.
   set /p "DST=Game root folder: "
 )

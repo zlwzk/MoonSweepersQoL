@@ -10,6 +10,11 @@
     <EnableDefaultItems>true</EnableDefaultItems>
     <!-- Reference assemblies only. BepInEx + Il2CppInterop are provided at runtime by the game's BepInEx install. -->
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <!-- Do not embed a PDB path (which would leak the build machine's Windows
+         username and workspace directory) into the shipped plugin DLL. -->
+    <DebugType>none</DebugType>
+    <DebugSymbols>false</DebugSymbols>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
 
   <ItemGroup>
