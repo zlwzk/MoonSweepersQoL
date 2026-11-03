@@ -1,0 +1,28 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <AssemblyName>MoonSweepersMod</AssemblyName>
+    <RootNamespace>MoonSweepersMod</RootNamespace>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultItems>true</EnableDefaultItems>
+    <!-- Reference assemblies only. BepInEx + Il2CppInterop are provided at runtime by the game's BepInEx install. -->
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Compile-time only: real UnityEngine / BepInEx / Il2CppInterop are provided by
+         BepInEx at runtime. Two of those shipped assemblies carry metadata the managed
+         compiler cannot parse, so we reference minimal identically-named stub projects. -->
+    <ProjectReference Include="..\UnityEngineStub\UnityEngineStub.csproj"><Private>false</Private></ProjectReference>
+    <ProjectReference Include="..\stubs\Il2CppInterop.Runtime\Il2CppInterop.Runtime.csproj"><Private>false</Private></ProjectReference>
+    <ProjectReference Include="..\stubs\BepInEx.Unity.IL2CPP\BepInEx.Unity.IL2CPP.csproj"><Private>false</Private></ProjectReference>
+
+    <!-- Intact assemblies (metadata readable) referenced directly, not copied to output. -->
+    <Reference Include="BepInEx.Core"><HintPath>..\refs\BepInEx.Core.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>..\refs\0Harmony.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+
+</Project>

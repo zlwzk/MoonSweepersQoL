@@ -1,0 +1,21 @@
+# ---- .NET build artifacts ----
+**/bin/
+**/obj/
+
+# ---- distribution runtime binaries (shipped via GitHub Release, not committed) ----
+dist/BepInEx/
+dist/dotnet/
+dist/winhttp.dll
+dist/doorstop_config.ini
+dist/changelog.txt
+dist/.doorstop_version
+MoonSweepersQoL-*.zip
+
+# ---- local exploration helpers (not part of the mod) ----
+_apidump/
+_listtypes/
+
+# ---- OS / editor junk ----
+Thumbs.db
+Desktop.ini
+*.user

@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/stubs/">
+    <Project Path="stubs/BepInEx.Unity.IL2CPP/BepInEx.Unity.IL2CPP.csproj" />
+    <Project Path="stubs/Il2CppInterop.Runtime/Il2CppInterop.Runtime.csproj" />
+  </Folder>
+  <Project Path="MoonSweepersMod/MoonSweepersMod.csproj" />
+  <Project Path="UnityEngineStub/UnityEngineStub.csproj" />
+</Solution>
